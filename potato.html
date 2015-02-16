@@ -1,0 +1,21 @@
+<html ng-app = "Potato">
+    <head>
+        <title>Potato</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" type="text/css" href="screen.css">
+    </head>
+    <body>
+		<script type = "text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type = "text/javascript" src = "angular.min.js"></script>
+        <script type = "text/javascript" src = "app.js"></script>
+        <div ng-controller = 'PotatoController'>
+            <div ng-repeat = "item in photos">
+            	<img ng-src="{{ item.media.m }}" />
+                <h1>{{ item.title }}</h1>
+                <p>Published : {{ item.published }}</p>
+                <a ng-Href = "https://www.flickr.com/photos/{{ item.author_id }}/">{{ item.author }}</a>
+                <a ng-Href = "{{ item.link }}">View on Flickr</a>
+            </div>
+        </div>
+    </body>
+</html>

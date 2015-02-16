@@ -1,0 +1,39 @@
+/* Scss Document */
+
+body{margin:0px;	background: #03A9F4;	font-family: "proxima-nova-soft";}
+h1,p,a{margin:0;text-decoration:none;color:#C51162;}
+h1,a,img{cursor:pointer;}
+div.ng-scope{background:white;margin:25px auto;}
+div.holder{background:none;width:90%;position:relative;margin:auto;}
+
+.repeat {border-radius: 5px;height:150px;overflow:hidden;
+
+-webkit-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.5);
+-moz-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.5);
+box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.5);
+}
+
+.repeat img{width:240px;height:100%;float:left;margin-right:20px;}
+.repeat div{padding:20px 0px;box-sizing:border-box;height:100%;}
+.repeat p{margin:15px 0px;}
+a:hover, h1:hover{color:#03A9F4;}
+
+a.flickr{margin-left:20px;}
+
+div.popup{position:fixed;top:100%;left:0;width:90%;height:100%;left:50%;margin-left:-45%;box-sizing:border-box;padding:20px 30px;transition:all 1s ease;background:white;}
+div.popup.active{top:0px;}
+a.close{position: absolute;right: 30px;font-size: 50px;}
+.popup h1{width:95%;}
+
+.details{clear:both;margin-top:10px;margin-bottom:20px;}
+.details a{float:left; margin-right:20px;}
+
+.popup img{float:left;margin-right:20px;}
+.popup .desc{float:left;width:60%;}
+p.tags{margin-top:20px;float:left;}
+.tags.array{width: 90%;margin-left: 10px;}
+
+@media only screen
+and (min-width: 890px){
+	
+}

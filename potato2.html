@@ -1,0 +1,44 @@
+<html ng-app = "Potato">
+    <head>
+        <title>Potato</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" type="text/css" href="potato.scss">
+        
+        <script src="//use.typekit.net/bjo2uvf.js"></script>
+		<script>try{Typekit.load();}catch(e){}</script>
+        
+		<script type = "text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script type = "text/javascript" src = "angular.min.js"></script>
+        <script type = "text/javascript" src = "app.js"></script>
+    </head>
+    <body>
+        <div ng-controller = 'PotatoController' class = "holder">
+            <!--  List of Photos  -->
+            <div ng-repeat = "item in photos" class = "repeat">
+            	<img ng-src="{{ item.media.m }}" ng-click = "LoadPhoto( item )"/>
+                <div>
+                    <h1 ng-click = "LoadPhoto( item )">{{ item.title | limitTo : 35 }}</h1>
+                    <p>Published : {{ item.published }}</p>
+                    <a ng-Href = "https://www.flickr.com/photos/{{ item.author_id }}/">{{ item.author }}</a>
+                    <a class = "flickr" ng-Href = "{{ item.link }}">View on Flickr</a>
+                </div>
+            </div>
+            
+            <!--  Pop Up for more detail  -->
+            <div class = "popup ng-class = {{ popup }}">
+            	<a class = "close" ng-click = "ClosePhoto()">X</a>
+            	<a ng-Href = "{{ loaded_photo.link }}" ><h1>{{ loaded_photo.title }}</h1></a>
+                <div class = "details">
+                    <a ng-Href = "https://www.flickr.com/photos/{{ loaded_photo.author_id }}/">{{ loaded_photo.author }}</a>
+                    <p>Published : {{ loaded_photo.published }}</p>
+                </div>
+                <a ng-Href = "{{ loaded_photo.link }}" ><img ng-src="{{ loaded_photo.media.m }}"/></a>
+                <div class = "desc">
+                    <p>{{ loaded_photo.description }}</p>
+                    <p class = "tags">Tags: </p>
+                    <p class = "tags array"><span ng-repeat = "tag in loaded_photo.tags"><a ng-Href = "https://www.flickr.com/search/?tags={{tag}}">{{tag}}</a>  </span></p>
+                </div>         
+            </div>
+        </div>
+    </body>
+</html>
